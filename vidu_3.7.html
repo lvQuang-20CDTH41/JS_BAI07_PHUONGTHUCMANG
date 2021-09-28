@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Học lập trình</h1>
+    <p>click vào button để in mảng</p>
+    <button type="submit" onclick='myFunction()'>Run</button>
+    <p id="demo"></p>
+    <script>
+        var subject = ['php', 'css', 'html', 'js'];
+        function myFunction() {
+            document.getElementById('demo').innerHTML = subject.valueOf();
+        }
+    </script>
+</body>
+
+</html>
