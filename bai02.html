@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var x = true;
+        var arr = new Array();
+        while (x == true) {
+            var n = parseInt(prompt('nhap gia tri'));
+            arr.push(n);
+            var x = confirm('ban muon nhap them gia tri khong');
+        }
+        document.write("Thông tin mảng: " + arr.join());
+        var even = odd = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+        }
+        document.write("<br>Tổng phần tử chẵn trong mảng: " + even);
+        document.write("<br>Tổng phần tử lẽ trong mảng: " + odd);
+
+
+    </script>
+</body>
+
+</html>
