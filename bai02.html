@@ -11,24 +11,56 @@
 <body>
     <script>
         var x = true;
+        // khởi tạo mảng
         var arr = new Array();
+        // nhập dữ liệu mảng
         while (x == true) {
             var n = parseInt(prompt('nhap gia tri'));
             arr.push(n);
             var x = confirm('ban muon nhap them gia tri khong');
         }
+        // hiển thị mảng
         document.write("Thông tin mảng: " + arr.join());
-        var even = odd = 0;
+        // Toán
+        function EvenOdd() {
+            var even = odd = isPrime = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    even++;
+                } else {
+                    odd++;
+                }
+                var kt = true;
+                // kiểm tra số nguyên tố
+                for (var m = 2; m < arr[i] / 2; m++) {
+                    if (arr[i] % m == 0) {
+                        kt = false;
+                        break;
+                    }
+                }
+                if (kt == true && arr[i] > 1) {
+                    isPrime = isPrime + 1;
+                }
+            }
+            document.write("<br>Tổng phần tử chẵn trong mảng: " + even);
+            document.write("<br>Tổng phần tử lẽ trong mảng: " + odd);
+            document.write("<br>Tổng số nguyên tố: " + isPrime);
+        }
+        EvenOdd();
+        var max = [0, 0];
+        var count = 1;
+        arr.sort();
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                even++;
-            } else {
-                odd++;
+            if (arr[i] == arr[i + 1]) count++;
+            else {
+                if (max[1] < count) {
+                    max[0] = arr[i];
+                    max[1] = count;
+                }
+                count = 1;
             }
         }
-        document.write("<br>Tổng phần tử chẵn trong mảng: " + even);
-        document.write("<br>Tổng phần tử lẽ trong mảng: " + odd);
-
+        document.write('<br>Phan tu ' + max[0] + " xuat hien nhieu lan voi " + max[1] + " lan");
 
     </script>
 </body>
